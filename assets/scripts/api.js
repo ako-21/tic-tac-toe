@@ -1,6 +1,9 @@
 // require in the api configuration
 const config = require('./config')
 const store = require('./store')
+const events = require('./events')
+const gameEngine = require('./gameEngine')
+
 
 const signUp = function (data) {
   return $.ajax({
@@ -55,9 +58,51 @@ const signOut = function () {
   })
 }
 
+const newGame = function () {
+  return $.ajax({
+    method: 'POST',
+    url: config.apiUrl + '/games',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
+const showGame = function () {
+  return $.ajax({
+    method: 'GET',
+    url: config.apiUrl + '/games/' + store.game._id,
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
+const selection = function (data) {
+  return $.ajax({
+    method: 'Patch',
+    url: config.apiUrl + '/games/' + store.game._id,
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: {
+      game: {
+        cell: {
+          index: document.querySelector('#indexZero').value,
+          value: 'X'
+        },
+        over: false
+      }
+    }
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
   changePWD,
-  signOut
+  signOut,
+  newGame,
+  showGame,
+  selection
 }

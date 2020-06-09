@@ -11,4 +11,6 @@ $(() => {
   $('#signIn').on('submit', events.onSignIn)
   $('#changePWD').on('submit', events.onChangePWD)
   $('#signOut').on('click', events.onSignOut)
+  $('#newGame').on('click', events.onNewGame)
+  $('#indexZero').on('click', events.onSelection)
 })

@@ -4,6 +4,7 @@ const getFormFields = require('../../lib/get-form-fields.js')
 // require in api file and ui file
 const api = require('./api')
 const ui = require('./ui')
+const store = require('./store')
 
 const onSignUp = function (event) {
   // no default refresh
@@ -49,9 +50,25 @@ const onSignOut = function () {
     .catch(ui.signOutFailure)
 }
 
+const onNewGame = function () {
+  event.preventDefault()
+  api.newGame()
+    .then(ui.newGameSuccess)
+    .catch(ui.newGameFailure)
+}
+
+const onSelection = function () {
+  event.preventDefault()
+  api.selection()
+    .then(ui.selectionSuccess)
+    .catch(ui.selectionFailure)
+}
+
 module.exports = {
   onSignUp,
   onSignIn,
   onChangePWD,
-  onSignOut
+  onSignOut,
+  onNewGame,
+  onSelection
 }
