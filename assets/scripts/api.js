@@ -95,6 +95,63 @@ const selectionZero = function (data) {
   })
 }
 
+const gameOverX = function () {
+  return $.ajax({
+    method: 'Patch',
+    url: config.apiUrl + '/games/' + store.game._id,
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: {
+      game: {
+        cell: {
+          index: 9,
+          value: 'X wins'
+        },
+        over: true
+      }
+    }
+  })
+}
+
+const gameOverO = function () {
+  return $.ajax({
+    method: 'Patch',
+    url: config.apiUrl + '/games/' + store.game._id,
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: {
+      game: {
+        cell: {
+          index: 9,
+          value: 'O wins'
+        },
+        over: true
+      }
+    }
+  })
+}
+
+const gameOverTie = function () {
+  return $.ajax({
+    method: 'Patch',
+    url: config.apiUrl + '/games/' + store.game._id,
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: {
+      game: {
+        cell: {
+          index: 9,
+          value: 'Tie'
+        },
+        over: true
+      }
+    }
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
@@ -102,5 +159,8 @@ module.exports = {
   signOut,
   newGame,
   showGame,
-  selectionZero
+  selectionZero,
+  gameOverX,
+  gameOverO,
+  gameOverTie
 }

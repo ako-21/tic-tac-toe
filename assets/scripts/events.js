@@ -56,11 +56,7 @@ const onNewGame = function () {
     .then(ui.newGameSuccess)
     .catch(ui.newGameFailure)
 }
-// function winnerX () {
-  // api.gameOver()
-    // .then(ui.gameOverSuccess)
-    // .catch(ui.gameOverFailure)
-// }
+
 let currentChoice = 'X'
 const onSelection = function (event) {
   $('#messages').empty()
@@ -83,6 +79,22 @@ const onSelection = function (event) {
     .then(ui.selectionZeroSuccess)
     .catch(ui.selectionZeroFailure)
 
+  function winnerX () {
+    api.gameOverX()
+      .then(ui.gameOverXSuccess)
+      .catch(ui.gameOverXFailure)
+  }
+  function winnerO () {
+    api.gameOverO()
+      .then(ui.gameOverOSuccess)
+      .catch(ui.gameOverOFailure)
+  }
+  function winnerTie () {
+    api.gameOverTie()
+      .then(ui.gameOverTieSuccess)
+      .catch(ui.gameOverTieFailure)
+  }
+
   const winnerTest = function () {
     if ((store.game.cells[0] === 'X' && store.game.cells[1] === 'X' && store.game.cells[2] === 'X') ||
         (store.game.cells[3] === 'X' && store.game.cells[4] === 'X' && store.game.cells[5] === 'X') ||
@@ -93,7 +105,7 @@ const onSelection = function (event) {
         (store.game.cells[6] === 'X' && store.game.cells[4] === 'X' && store.game.cells[2] === 'X') ||
         (store.game.cells[0] === 'X' && store.game.cells[4] === 'X' && store.game.cells[8] === 'X')) {
       console.log('X wins')
-      // winnerX()
+      winnerX()
     } else if ((store.game.cells[0] === 'O' && store.game.cells[1] === 'O' && store.game.cells[2] === 'O') ||
         (store.game.cells[3] === 'O' && store.game.cells[4] === 'O' && store.game.cells[5] === 'O') ||
         (store.game.cells[6] === 'O' && store.game.cells[7] === 'O' && store.game.cells[8] === 'O') ||
@@ -103,7 +115,7 @@ const onSelection = function (event) {
         (store.game.cells[6] === 'O' && store.game.cells[4] === 'O' && store.game.cells[2] === 'O') ||
         (store.game.cells[0] === 'O' && store.game.cells[4] === 'O' && store.game.cells[8] === 'O')) {
       console.log('O wins')
-      // winnerO()
+      winnerO()
     } else if ((store.game.cells[0] === 'X' || store.game.cells[0] === 'O') &&
               (store.game.cells[1] === 'X' || store.game.cells[1] === 'O') &&
               (store.game.cells[2] === 'X' || store.game.cells[2] === 'O') &&
@@ -114,10 +126,10 @@ const onSelection = function (event) {
               (store.game.cells[7] === 'X' || store.game.cells[7] === 'O') &&
               (store.game.cells[8] === 'X' || store.game.cells[8] === 'O')) {
       console.log('Tie')
-      // winnerTie()
+      winnerTie()
     }
   }
-  // setTimeout(winnerTest, 3000)
+
   store.game.cells.every(winnerTest)
   setTimeout(winnerTest, 100)
 }
