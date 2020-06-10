@@ -56,7 +56,11 @@ const onNewGame = function () {
     .then(ui.newGameSuccess)
     .catch(ui.newGameFailure)
 }
-
+// function winnerX () {
+  // api.gameOver()
+    // .then(ui.gameOverSuccess)
+    // .catch(ui.gameOverFailure)
+// }
 let currentChoice = 'X'
 const onSelection = function (event) {
   $('#messages').empty()
@@ -78,6 +82,44 @@ const onSelection = function (event) {
   api.selectionZero()
     .then(ui.selectionZeroSuccess)
     .catch(ui.selectionZeroFailure)
+
+  const winnerTest = function () {
+    if ((store.game.cells[0] === 'X' && store.game.cells[1] === 'X' && store.game.cells[2] === 'X') ||
+        (store.game.cells[3] === 'X' && store.game.cells[4] === 'X' && store.game.cells[5] === 'X') ||
+        (store.game.cells[6] === 'X' && store.game.cells[7] === 'X' && store.game.cells[8] === 'X') ||
+        (store.game.cells[0] === 'X' && store.game.cells[3] === 'X' && store.game.cells[6] === 'X') ||
+        (store.game.cells[1] === 'X' && store.game.cells[4] === 'X' && store.game.cells[7] === 'X') ||
+        (store.game.cells[2] === 'X' && store.game.cells[5] === 'X' && store.game.cells[8] === 'X') ||
+        (store.game.cells[6] === 'X' && store.game.cells[4] === 'X' && store.game.cells[2] === 'X') ||
+        (store.game.cells[0] === 'X' && store.game.cells[4] === 'X' && store.game.cells[8] === 'X')) {
+      console.log('X wins')
+      // winnerX()
+    } else if ((store.game.cells[0] === 'O' && store.game.cells[1] === 'O' && store.game.cells[2] === 'O') ||
+        (store.game.cells[3] === 'O' && store.game.cells[4] === 'O' && store.game.cells[5] === 'O') ||
+        (store.game.cells[6] === 'O' && store.game.cells[7] === 'O' && store.game.cells[8] === 'O') ||
+        (store.game.cells[0] === 'O' && store.game.cells[3] === 'O' && store.game.cells[6] === 'O') ||
+        (store.game.cells[1] === 'O' && store.game.cells[4] === 'O' && store.game.cells[7] === 'O') ||
+        (store.game.cells[2] === 'O' && store.game.cells[5] === 'O' && store.game.cells[8] === 'O') ||
+        (store.game.cells[6] === 'O' && store.game.cells[4] === 'O' && store.game.cells[2] === 'O') ||
+        (store.game.cells[0] === 'O' && store.game.cells[4] === 'O' && store.game.cells[8] === 'O')) {
+      console.log('O wins')
+      // winnerO()
+    } else if ((store.game.cells[0] === 'X' || store.game.cells[0] === 'O') &&
+              (store.game.cells[1] === 'X' || store.game.cells[1] === 'O') &&
+              (store.game.cells[2] === 'X' || store.game.cells[2] === 'O') &&
+              (store.game.cells[3] === 'X' || store.game.cells[3] === 'O') &&
+              (store.game.cells[4] === 'X' || store.game.cells[4] === 'O') &&
+              (store.game.cells[5] === 'X' || store.game.cells[5] === 'O') &&
+              (store.game.cells[6] === 'X' || store.game.cells[6] === 'O') &&
+              (store.game.cells[7] === 'X' || store.game.cells[7] === 'O') &&
+              (store.game.cells[8] === 'X' || store.game.cells[8] === 'O')) {
+      console.log('Tie')
+      // winnerTie()
+    }
+  }
+  // setTimeout(winnerTest, 3000)
+  store.game.cells.every(winnerTest)
+  setTimeout(winnerTest, 100)
 }
 
 module.exports = {
