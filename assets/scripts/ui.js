@@ -35,8 +35,10 @@ const signOutFailure = function () {
 }
 
 const newGameSuccess = function (data) {
+  $('#game').load(location.href + ' #game>*', '')
+  $('#game').removeClass()
+  $('#game').addClass('X')
   $('#messages').text('Start by selecting a box!')
-  $('form').trigger('reset')
   console.log(data)
   store.game = data.game
 }
@@ -57,6 +59,18 @@ const selectionZeroFailure = function () {
   // $('#zero').text(store.game.cells[0])
 }
 
+const gameOverXSuccess = function () {
+  $('#messages').text('X won!')
+}
+
+const gameOverOSuccess = function () {
+  $('#messages').text('O won!')
+}
+
+const gameOverTieSuccess = function () {
+  $('#messages').text('Tie!')
+}
+
 module.exports = {
   signUpSuccess,
   signUpFailure,
@@ -69,5 +83,8 @@ module.exports = {
   newGameSuccess,
   newGameFailure,
   selectionZeroSuccess,
-  selectionZeroFailure
+  selectionZeroFailure,
+  gameOverXSuccess,
+  gameOverOSuccess,
+  gameOverTieSuccess
 }
