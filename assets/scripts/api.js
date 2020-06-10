@@ -1,9 +1,7 @@
 // require in the api configuration
 const config = require('./config')
 const store = require('./store')
-const events = require('./events')
-const gameEngine = require('./gameEngine')
-
+// const gameEngine2 = require('./gameEngine2')
 
 const signUp = function (data) {
   return $.ajax({
@@ -78,7 +76,7 @@ const showGame = function () {
   })
 }
 
-const selection = function (data) {
+const selectionZero = function (data) {
   return $.ajax({
     method: 'Patch',
     url: config.apiUrl + '/games/' + store.game._id,
@@ -88,8 +86,8 @@ const selection = function (data) {
     data: {
       game: {
         cell: {
-          index: document.querySelector('#indexZero').value,
-          value: 'X'
+          index: $(event.target).attr('data-cell-index'),
+          value: $(event.target).attr('data-cell-value')
         },
         over: false
       }
@@ -104,5 +102,5 @@ module.exports = {
   signOut,
   newGame,
   showGame,
-  selection
+  selectionZero
 }

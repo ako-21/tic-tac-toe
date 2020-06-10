@@ -57,11 +57,27 @@ const onNewGame = function () {
     .catch(ui.newGameFailure)
 }
 
-const onSelection = function () {
+let currentChoice = 'X'
+const onSelection = function (event) {
+  $('#messages').empty()
   event.preventDefault()
-  api.selection()
-    .then(ui.selectionSuccess)
-    .catch(ui.selectionFailure)
+  console.log(event.target)
+  // Remember to only display game board after New Game is clicked
+  if ($(event.target).parents().hasClass('X')) {
+    currentChoice = 'X'
+    $('#game').removeClass()
+    $('#game').addClass('O')
+  } else if ($(event.target).parents().hasClass('O')) {
+    currentChoice = 'O'
+    $('#game').removeClass()
+    $('#game').addClass('X')
+  }
+  $(event.target).attr('data-cell-value', currentChoice)
+  $(event.target).parent().text(currentChoice)
+
+  api.selectionZero()
+    .then(ui.selectionZeroSuccess)
+    .catch(ui.selectionZeroFailure)
 }
 
 module.exports = {
