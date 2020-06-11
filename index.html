@@ -12,8 +12,11 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <section>
+    <section id="banner" class="oldStyle">
       <h1>Welcome To Tic Tac Toe!</h1>
+    </section>
+    <section id="bellowBanner" class="newStyle">
+      <button id="toSignUp">Sign Up</button><button id="toSignIn">Sign In</button>
     </section>
     <section id="messages">
     </section>
@@ -52,7 +55,7 @@
 <br>
 <section id="game" class="X">
   <div id="zero">
-    <button id="indexZero" data-cell-index="0">Index Zero</button>
+    <button type="button" id="indexZero" data-cell-index="0">Index Zero</button>
   </div>
   <div id="one">
     <button id="indexOne" data-cell-index="1">Index One</button>
