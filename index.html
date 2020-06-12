@@ -13,45 +13,60 @@
     </head>
     <body>
     <section id="topLeft" class="newStyle">
-      <button id="signOut">Sign Out</button>
+      <button id="signOut">Sign Out</button><button id="tosignin">Sign In</button><button id="tosignup">Sign Up</button>
     </section>
+    <div class="header-area">
     <section id="banner" class="oldStyle">
       <h1>Welcome To Tic Tac Toe!</h1>
     </section>
+  </div>
+  <div class="hide-sign-up">
+  <div class="sign-in-form-area newStyle">
+    <h2 id="signInHeader">Sign In</h2>
+    <form id="signIn">
+      <input required placeholder="Email Address" name="credentials[email]" type="email"><br>
+      <input required placeholder="Password" name="credentials[password]" type="password"><br>
+      <button type="Submit">Sign In</button>
+    </form>
+  </div>
+</div>
+    <div class="other-form-area">
     <section id="bellowBanner" class="newStyle">
-      <button id="toSignUp">Sign Up</button><button id="toSignIn">Sign In</button>
+      <div class="sign-up-hide">
       <h2 id="signUpHeader">Sign Up</h2>
       <form id="signUp">
-        <input name="credentials[email]" type="email">
-        <input name="credentials[password]" type="password">
-        <input name="credentials[password_confirmation]" type="password">
+        <input required placeholder="Email Address" name="credentials[email]" type="email">
+        <input required placeholder="Password" name="credentials[password]" type="password">
+        <input required placeholder="Confirm Password" name="credentials[password_confirmation]" type="password">
         <button type="Submit">Sign Up</button>
       </form>
-      <h2 id="signInHeader">Sign In</h2>
-      <form id="signIn">
-        <input name="credentials[email]" type="email">
-        <input name="credentials[password]" type="password">
-        <button type="Submit">Sign In</button>
-      </form>
+    </div>
+    <div class="hide-pw">
       <h2 id="changePWDHeader">Change Password</h2>
       <form id="changePWD">
-        <input name="passwords[old]" type="password">
-        <input name="passwords[new]" type="password">
+        <input required placeholder="Current Password" name="passwords[old]" type="password">
+        <input required placeholder="New Password" name="passwords[new]" type="password">
         <button type="Submit">Change</button>
       </form>
+    </div>
     </section>
-    <section id="messages" class="newStyle">
+  </div>
+  <div class="messages">
+    <section id="messages" class="OldStyle">
     </section>
+  </div>
 <br>
 <section id="dynamic" class="newStyle">
   <button type="Submit" id="newGame">New Game</button>
+  <br>
   <button type="Submit" id="gameStats">Game Stats</button>
 </section>
 <br>
+<div class="hide">
 <div class="game-box">
 <section id="game" class="X">
     <div class="container">
-      <div class="row">
+      <div class="row no-gutters">
         <div id="zero" class="col-4 col-sm-4 col-lx-4 col-md-4 col-lg-4">
           <button type="button" id="indexZero" class="zero" data-cell-index="0"></button>
         </div>
@@ -79,9 +94,10 @@
         <div id="eight" class="col-4 col-sm-4 col-lx-4 col-md-4 col-lg-4">
             <button id="indexEight" class="eight" data-cell-index="8"></button>
         </div>
-      </div>
     </div>
-</section>
-</div>
+      </div>
+      </section>
+    </div>
+  </div>
   </body>
 </html>
