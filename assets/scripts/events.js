@@ -62,7 +62,6 @@ const onSelection = function (event) {
   $('#messages').empty()
   event.preventDefault()
   console.log(event.target)
-  // Remember to only display game board after New Game is clicked
   if ($(event.target).parents().hasClass('X')) {
     currentChoice = 'X'
     $('#game').removeClass()
@@ -131,7 +130,7 @@ const onSelection = function (event) {
   }
 
   store.game.cells.every(winnerTest)
-  setTimeout(winnerTest, 100)
+  setTimeout(winnerTest, 1000)
 }
 
 module.exports = {

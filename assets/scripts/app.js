@@ -21,4 +21,21 @@ $(() => {
   $(document).on('click', '#indexSix', events.onSelection)
   $(document).on('click', '#indexSeven', events.onSelection)
   $(document).on('click', '#indexEight', events.onSelection)
+
+  $('#tosignin').click(function () {
+    $('.hide-sign-up').show()
+    $('#tosignin').hide()
+  })
+
+  $('#signOut').click(function () {
+    $('#tosignin').show()
+    $('#tosignup').show()
+  })
+  $('#tosignup').click(function () {
+    $('.sign-up-hide').show()
+    $('#tosignup').hide()
+  })
+  $('#gameStats').click(function () {
+    $('#messages').text('Feature coming Soon!')
+  })
 })

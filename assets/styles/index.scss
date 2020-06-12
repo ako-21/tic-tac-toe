@@ -1,9 +1,132 @@
 @import '~bootstrap/scss/bootstrap';
 @import url('https://fonts.googleapis.com/css2?family=Play:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap');
 
+.sign-in-form-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.other-form-area {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 5px;
+}
+
+.messages {
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
+}
+
+#signUp {
+  margin-bottom: 6%;
+}
+
+#signInHeader {
+  font-size: 50px;
+}
+
+#signIn > button {
+  margin-top: 1%;
+}
+
+h1 {
+  font-size: 80px;
+}
+
+.header-area {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3%;
+}
+
+#dynamic {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+}
+#newGame {
+  font-family: 'Balsamiq Sans', cursive;
+  font-size: 36px;
+  margin-left: 1%;
+  margin-top: 5%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background: white;
+  color: black;
+  border: 2px solid black;
+  border-radius: 8px;
+  outline: none;
+}
+
+#newGame:hover {
+  background: #2f4f4f;
+}
+#gameStats:hover {
+  background: #2f4f4f;
+}
+
+#gameStats {
+  font-family: 'Balsamiq Sans', cursive;
+  margin-left: 2%;
+  margin-top: 5%;
+  font-size: 36px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background: black;
+  color: white;
+  border: 2px solid black;
+  border-radius: 8px;
+  outline: none;
+
+}
+
+#topLeft {
+  margin-top: 2%;
+  margin-left: 2%;
+}
+
+#signOut {
+  color: white;
+  background: black;
+  font-size: 16px;
+  border: 2px solid black;
+  border-radius: 4px;
+}
+
+#tosignin {
+  color: white;
+  background: black;
+  font-size: 16px;
+  border: 2px solid black;
+  border-radius: 4px;
+  margin-left: 1px;
+}
+
+#tosignup {
+  color: white;
+  background: black;
+  font-size: 16px;
+  border: 2px solid black;
+  border-radius: 4px;
+  margin-left: 1px;
+}
+
+.newStyle {
+  font-family: 'Balsamiq Sans', cursive;
+}
+
+.oldStyle {
+  font-family: 'Play', sans-serif;
+}
 
 .game-box {
-  margin-top: 10%;
+  margin-top: 1%;
+  margin-bottom: 20%;
   height: 700px;
   display: flex;
   justify-content: center;
@@ -15,10 +138,25 @@
   border-radius: 20px;
 }
 
+.hide {
+  display: none;
+}
+
+.hide-sign-up {
+  display: none;
+}
+
+.sign-up-hide {
+  display: none;
+}
+
+.hide-pw {
+  display: none;
+}
+
 .container {
   display: flex;
   justify-content: center;
-  align-items: center;
   align-items: stretch;
   background: black;
   padding: 0px;
@@ -28,6 +166,7 @@
 .row {
   width: 105%;
   border: 0px;
+  display: flex;
 }
 
 
@@ -45,7 +184,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  align-self: center;
   color: white;
+  font-size: 10vw;
+  height: 175px;
+  font-family: 'Play', sans-serif;
 }
 
 .zero, .one, .two, .three, .four, .five {
@@ -62,12 +205,13 @@
 
 .col-4 > button {
 background: black;
+border: 0px;
+outline: none;
 }
 
 #zero {
   border-bottom: 10px solid white;
   border-right: 10px solid white;
-  font-family: 'Play', sans-serif;
 }
 
 #three {
@@ -126,14 +270,14 @@ background: black;
 }
 
 @media only screen and (max-width: 1024px) {
-  .game-box {
+  .game-box, .game-box2 {
    margin-left: 40px;
    margin-right: 40px;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .game-box {
+  .game-box, .game-box2 {
     height: 400px;
   }
 
@@ -144,6 +288,10 @@ background: black;
  .container {
     height: 350px;
     width: 550px;
+  }
+
+  .col-4 {
+    height: 120px;
   }
 
   #zero {
@@ -201,7 +349,7 @@ background: black;
 }
 
 @media only screen and (max-width: 414px) {
-  .game-box {
+  .game-box, .game-box2 {
     height: 300px;
     margin-left: 10px;
     margin-right: 10px;
@@ -214,6 +362,10 @@ background: black;
     height: 225px;
     width: 350px;
   }
+  .col-4 {
+    height: 75px;
+  }
+
   #zero {
     border-bottom: 5px solid white;
     border-right: 5px solid white;
@@ -285,8 +437,11 @@ background: black;
     width: 250px;
 
   }
-  .game-box {
+  .game-box, .game-box2 {
     height: 190px;
+  }
+  .col-4 {
+    height: 58px;
   }
   #zero {
     border-bottom: 3px solid white;
