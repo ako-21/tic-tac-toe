@@ -27,11 +27,12 @@ const changePWDFailure = function () {
   $('form').trigger('reset')
 }
 const signOutSuccess = function () {
+  $('#game').load(location.href + ' #game>*', '')
   $('#messages').text('You are now signed out.')
-  location.reload()
+  // location.reload()
 }
 const signOutFailure = function () {
-  $('#messages').text('Sign out failed, try again')
+  $('#messages').text('You are not signed in.')
 }
 
 const newGameSuccess = function (data) {

@@ -1,1 +1,342 @@
 @import '~bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/css2?family=Play:wght@700&display=swap');
+
+
+.game-box {
+  margin-top: 10%;
+  height: 700px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: black;
+  margin-left: 20%;
+  margin-right: 20%;
+  border: 10px solid black;
+  border-radius: 20px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-items: stretch;
+  background: black;
+  padding: 0px;
+  border: 0px;
+}
+
+.row {
+  width: 105%;
+  border: 0px;
+}
+
+
+.X, .O {
+  display: flex;
+  align-items: center;
+  align-items: stretch;
+  background: black;
+  width: 800px;
+  height: 500px;
+  border: 0px;
+}
+
+.col-4 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.zero, .one, .two, .three, .four, .five {
+  height: 85%;
+  width: 100%;
+  border: 0px;
+}
+
+.six, .seven, .eight {
+  height: 100%;
+  width: 100%;
+  border: 0px;
+}
+
+.col-4 > button {
+background: black;
+}
+
+#zero {
+  border-bottom: 10px solid white;
+  border-right: 10px solid white;
+  font-family: 'Play', sans-serif;
+}
+
+#three {
+    border-bottom: 10px solid white;
+    border-right: 10px solid white;
+    border-top: 10px solid white;
+    font-family: 'Play', sans-serif;
+  }
+
+
+#one {
+  border-bottom: 10px solid white;
+  border-right: 10px solid white;
+  border-left: 10px solid white;
+  font-family: 'Play', sans-serif;
+}
+
+#four {
+  border-bottom: 10px solid white;
+  border-right: 10px solid white;
+  border-left: 10px solid white;
+  border-top: 10px solid white;
+  font-family: 'Play', sans-serif;
+}
+
+#two {
+  border-left: 10px solid white;
+  border-bottom: 10px solid white;
+  font-family: 'Play', sans-serif;
+}
+
+#five {
+  border-left: 10px solid white;
+  border-bottom: 10px solid white;
+  border-top: 10px solid white;
+  font-family: 'Play', sans-serif;
+}
+
+#six {
+  border-top: 10px solid white;
+  border-right: 10px solid white;
+  font-family: 'Play', sans-serif;
+}
+
+#seven {
+  border-top: 10px solid white;
+  border-right: 10px solid white;
+  border-left: 10px solid white;
+  font-family: 'Play', sans-serif;
+}
+
+#eight {
+  border-top: 10px solid white;
+  border-left: 10px solid white;
+  font-family: 'Play', sans-serif;
+}
+
+@media only screen and (max-width: 1024px) {
+  .game-box {
+   margin-left: 40px;
+   margin-right: 40px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .game-box {
+    height: 400px;
+  }
+
+  .X, .O {
+    height: 350px;
+  }
+
+ .container {
+    height: 350px;
+    width: 550px;
+  }
+
+  #zero {
+    border-bottom: 7px solid white;
+    border-right: 7px solid white;
+  }
+
+  #three {
+      border-bottom: 7px solid white;
+      border-right: 7px solid white;
+      border-top: 7px solid white;
+    }
+
+
+  #one {
+    border-bottom: 7px solid white;
+    border-right: 7px solid white;
+    border-left: 7px solid white;
+  }
+
+  #four {
+    border-bottom: 7px solid white;
+    border-right: 7px solid white;
+    border-left: 7px solid white;
+    border-top: 7px solid white;
+  }
+
+  #two {
+    border-left: 7px solid white;
+    border-bottom: 7px solid white;
+  }
+
+  #five {
+    border-left: 7px solid white;
+    border-bottom: 7px solid white;
+    border-top: 7px solid white;
+  }
+
+  #six {
+    border-top: 7px solid white;
+    border-right: 7px solid white;
+  }
+
+  #seven {
+    border-top: 7px solid white;
+    border-right: 7px solid white;
+    border-left: 7px solid white;
+  }
+
+  #eight {
+    border-top: 7px solid white;
+    border-left: 7px solid white;
+  }
+
+}
+
+@media only screen and (max-width: 414px) {
+  .game-box {
+    height: 300px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .X, .O {
+    height: 225px;
+    margin-top: 15px;
+  }
+  .container {
+    height: 225px;
+    width: 350px;
+  }
+  #zero {
+    border-bottom: 5px solid white;
+    border-right: 5px solid white;
+  }
+
+  #three {
+      border-bottom: 5px solid white;
+      border-right: 5px solid white;
+      border-top: 5px solid white;
+    }
+
+
+  #one {
+    border-bottom: 5px solid white;
+    border-right: 5px solid white;
+    border-left: 5px solid white;
+  }
+
+  #four {
+    border-bottom: 5px solid white;
+    border-right: 5px solid white;
+    border-left: 5px solid white;
+    border-top: 5px solid white;
+  }
+
+  #two {
+    border-left: 5px solid white;
+    border-bottom: 5px solid white;
+  }
+
+  #five {
+    border-left: 5px solid white;
+    border-bottom: 5px solid white;
+    border-top: 5px solid white;
+  }
+
+  #six {
+    border-top: 5px solid white;
+    border-right: 5px solid white;
+  }
+
+  #seven {
+    border-top: 5px solid white;
+    border-right: 5px solid white;
+    border-left: 5px solid white;
+  }
+
+  #eight {
+    border-top: 5px solid white;
+    border-left: 5px solid white;
+  }
+
+}
+
+@media only screen and (max-width: 375px) {
+  .container {
+    width: 295px;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .X, .O {
+    width: 250px;
+    height: 175px;
+    margin-bottom: 12px;
+  }
+  .container {
+    height: 170px;
+    width: 250px;
+
+  }
+  .game-box {
+    height: 190px;
+  }
+  #zero {
+    border-bottom: 3px solid white;
+    border-right: 3px solid white;
+  }
+
+  #three {
+      border-bottom: 3px solid white;
+      border-right: 3px solid white;
+      border-top: 3px solid white;
+    }
+
+
+  #one {
+    border-bottom: 3px solid white;
+    border-right: 3px solid white;
+    border-left: 3px solid white;
+  }
+
+  #four {
+    border-bottom: 3px solid white;
+    border-right: 3px solid white;
+    border-left: 3px solid white;
+    border-top: 3px solid white;
+  }
+
+  #two {
+    border-left: 3px solid white;
+    border-bottom: 3px solid white;
+  }
+
+  #five {
+    border-left: 3px solid white;
+    border-bottom: 3px solid white;
+    border-top: 3px solid white;
+  }
+
+  #six {
+    border-top: 3px solid white;
+    border-right: 3px solid white;
+  }
+
+  #seven {
+    border-top: 3px solid white;
+    border-right: 3px solid white;
+    border-left: 3px solid white;
+  }
+
+  #eight {
+    border-top: 3px solid white;
+    border-left: 3px solid white;
+  }
+}
