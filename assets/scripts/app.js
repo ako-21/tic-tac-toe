@@ -24,6 +24,8 @@ $(() => {
 
   $('#tosignin').click(function () {
     $('.hide-sign-up').show()
+    $('#tosignup').show()
+    $('.sign-up-hide').hide()
     $('#tosignin').hide()
   })
 
@@ -33,9 +35,16 @@ $(() => {
   })
   $('#tosignup').click(function () {
     $('.sign-up-hide').show()
+    $('#tosignin').show()
+    $('.hide-sign-up').hide()
     $('#tosignup').hide()
   })
   $('#gameStats').click(function () {
     $('#messages').text('Feature coming Soon!')
+  })
+  $('.hide-pw-button').click(function () {
+    $('.hide-pw').show()
+    $('#messages').empty()
+    $('#winnermessages').empty()
   })
 })

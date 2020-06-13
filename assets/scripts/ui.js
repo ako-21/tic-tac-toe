@@ -7,13 +7,20 @@ const signUpSuccess = function () {
   $('.sign-up-hide').hide()
 }
 const signUpFailure = function () {
-  $('#messages').text('Sign Up failed, try again')
+  $('form').trigger('reset')
+  if (store.credentials.password !== store.credentials.password_confirmation) {
+    $('#messages').text('Passwords do not match, try again.')
+  } else if (store.credentials.password === store.credentials.password_confirmation) {
+    $('#messages').text('Email already registered, try again.')
+  }
 }
+
 const signInSuccess = function (data) {
   $('#messages').text('You are now signed in and ready to play!')
   $('form').trigger('reset')
   $('.hide-sign-up').hide()
-  $('.hide-pw').show()
+  // $('.hide-pw').show()
+  $('.hide-pw-button').show()
   $('#tosignup').hide()
   // store the user object to access the token
   console.log(data)
@@ -21,13 +28,15 @@ const signInSuccess = function (data) {
 }
 const signInFailure = function () {
   $('#messages').text('Wrong user name or password. Try again.')
+  $('form').trigger('reset')
 }
 const changePWDSuccess = function () {
   $('#messages').text('Password successfully changed!')
   $('form').trigger('reset')
+  $('.hide-pw').hide()
 }
 const changePWDFailure = function () {
-  $('#messages').text('Current password is not correct.')
+  $('#pwfail').text('Current password is not correct.')
   $('form').trigger('reset')
 }
 const signOutSuccess = function () {
@@ -35,6 +44,7 @@ const signOutSuccess = function () {
   $('#messages').text('You are now signed out.')
   $('.hide').hide()
   $('.hide-pw').hide()
+  $('winnermessages').empty()
 
   // location.reload()
 }
@@ -44,6 +54,7 @@ const signOutFailure = function () {
 
 const newGameSuccess = function (data) {
   $('.hide').show()
+  $('.hide-pw').hide()
   $('#game').load(location.href + ' #game>*', '')
   $('#game').removeClass()
   $('#game').addClass('X')
@@ -75,19 +86,43 @@ const selectionZeroFailure = function () {
 }
 
 const gameOverXSuccess = function () {
-  $('#messages').text('X won!')
+  $('#winnermessages').text('X won!')
+  $('#indexZero').off()
+  $('#indexOne').off()
+  $('#indexTwo').off()
+  $('#indexThree').off()
+  $('#indexFour').off()
+  $('#indexFive').off()
+  $('#indexSix').off()
+  $('#indexSeven').off()
+  $('#indexEight').off()
 }
 
 const gameOverOSuccess = function () {
-  $('#messages').text('O won!')
+  $('#winnermessages').text('O won!')
+  $('#indexZero').off()
+  $('#indexOne').off()
+  $('#indexTwo').off()
+  $('#indexThree').off()
+  $('#indexFour').off()
+  $('#indexFive').off()
+  $('#indexSix').off()
+  $('#indexSeven').off()
+  $('#indexEight').off()
 }
 
 const gameOverTieSuccess = function () {
-  $('#messages').text('Tie!')
+  $('#winnermessages').text("It's a Tie!")
+  $('#indexZero').off()
+  $('#indexOne').off()
+  $('#indexTwo').off()
+  $('#indexThree').off()
+  $('#indexFour').off()
+  $('#indexFive').off()
+  $('#indexSix').off()
+  $('#indexSeven').off()
+  $('#indexEight').off()
 }
-
-
-
 
 module.exports = {
   signUpSuccess,

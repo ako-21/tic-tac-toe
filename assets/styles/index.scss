@@ -96,6 +96,7 @@ h1 {
   font-size: 16px;
   border: 2px solid black;
   border-radius: 4px;
+  outline: none;
 }
 
 #tosignin {
@@ -105,6 +106,7 @@ h1 {
   border: 2px solid black;
   border-radius: 4px;
   margin-left: 1px;
+  outline: none;
 }
 
 #tosignup {
@@ -114,6 +116,17 @@ h1 {
   border: 2px solid black;
   border-radius: 4px;
   margin-left: 1px;
+  outline: none;
+}
+
+#pw {
+  color: white;
+  background: black;
+  font-size: 16px;
+  border: 2px solid black;
+  border-radius: 4px;
+  margin-top: 4px;
+  outline: none;
 }
 
 .newStyle {
@@ -151,6 +164,10 @@ h1 {
 }
 
 .hide-pw {
+  display: none;
+}
+
+.hide-pw-button {
   display: none;
 }
 

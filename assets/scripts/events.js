@@ -11,7 +11,8 @@ const onSignUp = function (event) {
   event.preventDefault()
   const form = event.target
   const data = getFormFields(form)
-
+  console.log(data)
+  store.credentials = data.credentials
   // sumbit the event info to the api
   api.signUp(data)
 

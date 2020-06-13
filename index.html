@@ -14,6 +14,9 @@
     <body>
     <section id="topLeft" class="newStyle">
       <button id="signOut">Sign Out</button><button id="tosignin">Sign In</button><button id="tosignup">Sign Up</button>
+      <div class="hide-pw-button">
+        <button id="pw">Change Password</button>
+      </div>
     </section>
     <div class="header-area">
     <section id="banner" class="oldStyle">
@@ -48,6 +51,8 @@
         <input required placeholder="New Password" name="passwords[new]" type="password">
         <button type="Submit">Change</button>
       </form>
+      <div class="pw-fail OldStyle" id="pwfail">
+      </div>
     </div>
     </section>
   </div>
@@ -55,13 +60,16 @@
     <section id="messages" class="OldStyle">
     </section>
   </div>
-<br>
 <section id="dynamic" class="newStyle">
   <button type="Submit" id="newGame">New Game</button>
   <br>
   <button type="Submit" id="gameStats">Game Stats</button>
 </section>
 <br>
+<div class="messages">
+<section id="winnermessages" class="newStyle">
+</section>
+</div>
 <div class="hide">
 <div class="game-box">
 <section id="game" class="X">
