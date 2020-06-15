@@ -311,6 +311,12 @@ outline: none;
     height: 120px;
   }
 
+  h1 {
+    font-size: 50px;
+    margin-top: 20px;
+  }
+
+
   #zero {
     border-bottom: 7px solid white;
     border-right: 7px solid white;
@@ -381,6 +387,18 @@ outline: none;
   }
   .col-4 {
     height: 75px;
+  }
+
+  #newGame, #gameStats {
+    font-size: 26px;
+  }
+
+  .messages {
+    font-size: 18px;
+  }
+
+  h1 {
+    font-size: 30px;
   }
 
   #zero {
@@ -454,6 +472,11 @@ outline: none;
     width: 250px;
 
   }
+
+  h1 {
+    font-size: 24px;
+  }
+
   .game-box, .game-box2 {
     height: 190px;
   }

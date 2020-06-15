@@ -11,7 +11,6 @@ const onSignUp = function (event) {
   event.preventDefault()
   const form = event.target
   const data = getFormFields(form)
-  console.log(data)
   store.credentials = data.credentials
   // sumbit the event info to the api
   api.signUp(data)
@@ -61,8 +60,8 @@ const onNewGame = function () {
 let currentChoice = 'X'
 const onSelection = function (event) {
   $('#messages').empty()
+  $('.hide-pw').hide()
   event.preventDefault()
-  console.log(event.target)
   if ($(event.target).parents().hasClass('X')) {
     currentChoice = 'X'
     $('#game').removeClass()
@@ -104,7 +103,6 @@ const onSelection = function (event) {
         (store.game.cells[2] === 'X' && store.game.cells[5] === 'X' && store.game.cells[8] === 'X') ||
         (store.game.cells[6] === 'X' && store.game.cells[4] === 'X' && store.game.cells[2] === 'X') ||
         (store.game.cells[0] === 'X' && store.game.cells[4] === 'X' && store.game.cells[8] === 'X')) {
-      console.log('X wins')
       winnerX()
     } else if ((store.game.cells[0] === 'O' && store.game.cells[1] === 'O' && store.game.cells[2] === 'O') ||
         (store.game.cells[3] === 'O' && store.game.cells[4] === 'O' && store.game.cells[5] === 'O') ||
@@ -114,7 +112,6 @@ const onSelection = function (event) {
         (store.game.cells[2] === 'O' && store.game.cells[5] === 'O' && store.game.cells[8] === 'O') ||
         (store.game.cells[6] === 'O' && store.game.cells[4] === 'O' && store.game.cells[2] === 'O') ||
         (store.game.cells[0] === 'O' && store.game.cells[4] === 'O' && store.game.cells[8] === 'O')) {
-      console.log('O wins')
       winnerO()
     } else if ((store.game.cells[0] === 'X' || store.game.cells[0] === 'O') &&
               (store.game.cells[1] === 'X' || store.game.cells[1] === 'O') &&
@@ -125,7 +122,6 @@ const onSelection = function (event) {
               (store.game.cells[6] === 'X' || store.game.cells[6] === 'O') &&
               (store.game.cells[7] === 'X' || store.game.cells[7] === 'O') &&
               (store.game.cells[8] === 'X' || store.game.cells[8] === 'O')) {
-      console.log('Tie')
       winnerTie()
     }
   }

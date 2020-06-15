@@ -23,7 +23,6 @@ const signInSuccess = function (data) {
   $('.hide-pw-button').show()
   $('#tosignup').hide()
   // store the user object to access the token
-  console.log(data)
   store.user = data.user
 }
 const signInFailure = function () {
@@ -44,7 +43,8 @@ const signOutSuccess = function () {
   $('#messages').text('You are now signed out.')
   $('.hide').hide()
   $('.hide-pw').hide()
-  $('winnermessages').empty()
+  $('.hide-pw-button').hide()
+  $('#winnermessages').empty()
 
   // location.reload()
 }
@@ -53,14 +53,23 @@ const signOutFailure = function () {
 }
 
 const newGameSuccess = function (data) {
+  $('#indexZero').removeAttr('disabled')
+  $('#indexOne').removeAttr('disabled')
+  $('#indexTwo').removeAttr('disabled')
+  $('#indexThree').removeAttr('disabled')
+  $('#indexFour').removeAttr('disabled')
+  $('#indexFive').removeAttr('disabled')
+  $('#indexSix').removeAttr('disabled')
+  $('#indexSeven').removeAttr('disabled')
+  $('#indexEight').removeAttr('disabled')
   $('.hide').show()
+  $('#winnermessages').empty()
   $('.hide-pw').hide()
   $('#game').load(location.href + ' #game>*', '')
   $('#game').removeClass()
   $('#game').addClass('X')
-  $('#messages').text('Start by selecting a box!')
-  console.log(data)
   store.game = data.game
+  $('#messages').text('Start by selecting a box!')
 }
 const newGameFailure = function () {
   $('#messages').text('Must sign in to start a new game.')
@@ -74,54 +83,53 @@ $(document).on('click', '#newGame', function () {
 
 const selectionZeroSuccess = function (data) {
 //  $('#indexZero').remove()
-  console.log(data)
   store.game = data.game
   // $('#zero').text(store.game.cells[0])
 }
 
 const selectionZeroFailure = function () {
 //  $('#indexZero').remove()
-
+  $('#message').text('update failure')
   // $('#zero').text(store.game.cells[0])
 }
 
 const gameOverXSuccess = function () {
   $('#winnermessages').text('X won!')
-  $('#indexZero').off()
-  $('#indexOne').off()
-  $('#indexTwo').off()
-  $('#indexThree').off()
-  $('#indexFour').off()
-  $('#indexFive').off()
-  $('#indexSix').off()
-  $('#indexSeven').off()
-  $('#indexEight').off()
+  $('#indexZero').attr('disabled', true)
+  $('#indexOne').attr('disabled', true)
+  $('#indexTwo').attr('disabled', true)
+  $('#indexThree').attr('disabled', true)
+  $('#indexFour').attr('disabled', true)
+  $('#indexFive').attr('disabled', true)
+  $('#indexSix').attr('disabled', true)
+  $('#indexSeven').attr('disabled', true)
+  $('#indexEight').attr('disabled', true)
 }
 
 const gameOverOSuccess = function () {
   $('#winnermessages').text('O won!')
-  $('#indexZero').off()
-  $('#indexOne').off()
-  $('#indexTwo').off()
-  $('#indexThree').off()
-  $('#indexFour').off()
-  $('#indexFive').off()
-  $('#indexSix').off()
-  $('#indexSeven').off()
-  $('#indexEight').off()
+  $('#indexZero').attr('disabled', true)
+  $('#indexOne').attr('disabled', true)
+  $('#indexTwo').attr('disabled', true)
+  $('#indexThree').attr('disabled', true)
+  $('#indexFour').attr('disabled', true)
+  $('#indexFive').attr('disabled', true)
+  $('#indexSix').attr('disabled', true)
+  $('#indexSeven').attr('disabled', true)
+  $('#indexEight').attr('disabled', true)
 }
 
 const gameOverTieSuccess = function () {
   $('#winnermessages').text("It's a Tie!")
-  $('#indexZero').off()
-  $('#indexOne').off()
-  $('#indexTwo').off()
-  $('#indexThree').off()
-  $('#indexFour').off()
-  $('#indexFive').off()
-  $('#indexSix').off()
-  $('#indexSeven').off()
-  $('#indexEight').off()
+  $('#indexZero').attr('disabled', true)
+  $('#indexOne').attr('disabled', true)
+  $('#indexTwo').attr('disabled', true)
+  $('#indexThree').attr('disabled', true)
+  $('#indexFour').attr('disabled', true)
+  $('#indexFive').attr('disabled', true)
+  $('#indexSix').attr('disabled', true)
+  $('#indexSeven').attr('disabled', true)
+  $('#indexEight').attr('disabled', true)
 }
 
 module.exports = {
