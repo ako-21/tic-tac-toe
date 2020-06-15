@@ -24,6 +24,7 @@ const signInSuccess = function (data) {
   $('#tosignup').hide()
   // store the user object to access the token
   store.user = data.user
+  console.log(data)
 }
 const signInFailure = function () {
   $('#messages').text('Wrong user name or password. Try again.')
