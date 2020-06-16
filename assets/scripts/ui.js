@@ -158,6 +158,7 @@ const gameStatsSuccess = function (data) {
   newArray.forEach(countUp)
   $('#xCount').html(xCount)
   $('#oCount').html(oCount)
+  $('#tieCount').html(tieCount)
   console.log(xCount + 'xCount')
 // if active, show in ul
 }
