@@ -12,6 +12,7 @@ $(() => {
   $('#changePWD').on('submit', events.onChangePWD)
   $('#signOut').on('click', events.onSignOut)
   $('#newGame').on('click', events.onNewGame)
+  $('#gameStats').on('click', events.onGameStats)
   $(document).on('click', '#indexZero', events.onSelection)
   $(document).on('click', '#indexOne', events.onSelection)
   $(document).on('click', '#indexTwo', events.onSelection)
@@ -40,9 +41,6 @@ $(() => {
     $('.hide-sign-up').hide()
     $('#tosignup').hide()
     $('#messages').empty()
-  })
-  $('#gameStats').click(function () {
-    $('#messages').text('Feature coming Soon!')
   })
   $('.hide-pw-button').click(function () {
     $('.hide-pw').toggle()

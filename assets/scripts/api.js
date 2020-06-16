@@ -152,6 +152,16 @@ const gameOverTie = function () {
   })
 }
 
+const gameStats = function () {
+  return $.ajax({
+    method: 'GET',
+    url: config.apiUrl + '/games',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
@@ -162,5 +172,6 @@ module.exports = {
   selectionZero,
   gameOverX,
   gameOverO,
-  gameOverTie
+  gameOverTie,
+  gameStats
 }

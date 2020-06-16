@@ -43,8 +43,11 @@ const onChangePWD = function (event) {
     .catch(ui.changePWDFailure)
 }
 
-const onSignOut = function () {
+const onSignOut = function (event) {
   event.preventDefault()
+  if (store.user === undefined) {
+    $('#messages').text('You are not signed in.')
+  }
   api.signOut()
     .then(ui.signOutSuccess)
     .catch(ui.signOutFailure)
@@ -130,11 +133,21 @@ const onSelection = function (event) {
   setTimeout(winnerTest, 1000)
 }
 
+const onGameStats = function (event) {
+  if (store.user === undefined) {
+    $('#messages').text('Must be logged in to view game stats.')
+  }
+  api.gameStats()
+    .then(ui.gameStatsSuccess)
+    .catch(ui.gameStatsFailure)
+}
+
 module.exports = {
   onSignUp,
   onSignIn,
   onChangePWD,
   onSignOut,
   onNewGame,
-  onSelection
+  onSelection,
+  onGameStats
 }

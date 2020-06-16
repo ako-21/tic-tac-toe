@@ -133,6 +133,41 @@ const gameOverTieSuccess = function () {
   $('#indexEight').attr('disabled', true)
 }
 
+const gameStatsSuccess = function (data) {
+  console.log(data)
+  $('.stats-hide').show()
+  // if over, count the wins for x and o and tie
+  const createArray = function (arr) {
+    return arr.over === true
+  }
+  const newArray = data.games.filter(createArray)
+  console.log(newArray)
+  let xCount = 0
+  let oCount = 0
+  let tieCount = 0
+  const countUp = function (newarr) {
+    if (newarr.cells[9] === 'X wins') {
+      xCount = xCount + 1
+    } else if (newarr.cells[9] === 'O wins') {
+      oCount = oCount + 1
+    } else {
+      tieCount = tieCount + 1
+    }
+  }
+
+  newArray.forEach(countUp)
+  $('#xCount').html(xCount)
+  $('#oCount').html(oCount)
+  console.log(xCount + 'xCount')
+// if active, show in ul
+}
+
+const gameStatsFailure = function () {
+  if (store.user === undefined) {
+    $('#messages').text('Must be logged in to view game stats.')
+  }
+}
+
 module.exports = {
   signUpSuccess,
   signUpFailure,
@@ -148,5 +183,7 @@ module.exports = {
   selectionZeroFailure,
   gameOverXSuccess,
   gameOverOSuccess,
-  gameOverTieSuccess
+  gameOverTieSuccess,
+  gameStatsSuccess,
+  gameStatsFailure
 }
