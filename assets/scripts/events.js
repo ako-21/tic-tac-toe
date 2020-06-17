@@ -142,6 +142,12 @@ const onGameStats = function (event) {
     .then(ui.gameStatsSuccess)
     .catch(ui.gameStatsFailure)
 }
+const liClick = function (event) {
+  console.log(event.target)
+  event.preventDefault()
+  api.showGame()
+    .then(ui.showGameSuccess)
+}
 
 module.exports = {
   onSignUp,
@@ -150,5 +156,6 @@ module.exports = {
   onSignOut,
   onNewGame,
   onSelection,
-  onGameStats
+  onGameStats,
+  liClick
 }

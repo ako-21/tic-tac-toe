@@ -22,6 +22,7 @@ $(() => {
   $(document).on('click', '#indexSix', events.onSelection)
   $(document).on('click', '#indexSeven', events.onSelection)
   $(document).on('click', '#indexEight', events.onSelection)
+  $(document).on('click', 'li', events.liClick)
 
   $('#tosignin').click(function () {
     $('.hide-sign-up').show()

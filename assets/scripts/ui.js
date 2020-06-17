@@ -86,6 +86,11 @@ $(document).on('click', '#newGame', function () {
   }
 })
 
+const showGameSuccess = function (data) {
+  console.log(data)
+  $('#gameStats').attr('disabled', true)
+}
+
 const selectionZeroSuccess = function (data) {
 //  $('#indexZero').remove()
   store.game = data.game
@@ -211,5 +216,6 @@ module.exports = {
   gameOverOSuccess,
   gameOverTieSuccess,
   gameStatsSuccess,
-  gameStatsFailure
+  gameStatsFailure,
+  showGameSuccess
 }

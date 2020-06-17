@@ -69,7 +69,7 @@ const newGame = function () {
 const showGame = function () {
   return $.ajax({
     method: 'GET',
-    url: config.apiUrl + '/games/' + store.game._id,
+    url: config.apiUrl + '/games/' + $(event.target).attr('id'),
     headers: {
       Authorization: 'Token token=' + store.user.token
     }
