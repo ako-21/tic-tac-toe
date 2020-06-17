@@ -46,6 +46,7 @@ const signOutSuccess = function () {
   $('.hide-pw').hide()
   $('.hide-pw-button').hide()
   $('#winnermessages').empty()
+  $('.stats-hide').hide()
 
   // location.reload()
 }
@@ -63,6 +64,9 @@ const newGameSuccess = function (data) {
   $('#indexSix').removeAttr('disabled')
   $('#indexSeven').removeAttr('disabled')
   $('#indexEight').removeAttr('disabled')
+  $('#gameStats').attr('disabled', true)
+  // $('#gameStats').on('hover', function () { $('#messages').text('Cannot view stats in the middle of a game') })
+  $('.stats-hide').hide()
   $('.hide').show()
   $('#winnermessages').empty()
   $('.hide-pw').hide()
@@ -105,6 +109,7 @@ const gameOverXSuccess = function () {
   $('#indexSix').attr('disabled', true)
   $('#indexSeven').attr('disabled', true)
   $('#indexEight').attr('disabled', true)
+  $('#gameStats').removeAttr('disabled')
 }
 
 const gameOverOSuccess = function () {
@@ -118,6 +123,7 @@ const gameOverOSuccess = function () {
   $('#indexSix').attr('disabled', true)
   $('#indexSeven').attr('disabled', true)
   $('#indexEight').attr('disabled', true)
+  $('#gameStats').removeAttr('disabled')
 }
 
 const gameOverTieSuccess = function () {
@@ -131,11 +137,17 @@ const gameOverTieSuccess = function () {
   $('#indexSix').attr('disabled', true)
   $('#indexSeven').attr('disabled', true)
   $('#indexEight').attr('disabled', true)
+  $('#gameStats').removeAttr('disabled')
 }
 
 const gameStatsSuccess = function (data) {
-  console.log(data)
-  $('.stats-hide').show()
+  if ($('.hide').css('display') === 'block') {
+    $('.hide').hide()
+  }
+  $('.game-list').empty()
+  $('#messages').empty()
+  $('#winnermessages').empty()
+  // $('.stats-hide').show()
   // if over, count the wins for x and o and tie
   const createArray = function (arr) {
     return arr.over === true
@@ -160,7 +172,20 @@ const gameStatsSuccess = function (data) {
   $('#oCount').html(oCount)
   $('#tieCount').html(tieCount)
   console.log(xCount + 'xCount')
-// if active, show in ul
+  // if active, show in ul
+  const displayOpen = function (arr) {
+    let idHTML = ''
+    if (arr.over === false) {
+      console.log(arr)
+      const makeLI = (`
+      <li id="${arr._id}">Game: \u00A0 ${arr._id}</li>
+      `)
+      idHTML += makeLI
+      $('.game-list').append(idHTML)
+    }
+  }
+  data.games.forEach(displayOpen)
+  $('.game-list li:nth-child(odd)').addClass('gray')
 }
 
 const gameStatsFailure = function () {

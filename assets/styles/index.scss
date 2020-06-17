@@ -71,6 +71,11 @@ h1 {
   background: #2f4f4f;
 }
 
+#gameStats:disabled {
+  background: white;
+  border: 0;
+}
+
 #gameStats {
   font-family: 'Balsamiq Sans', cursive;
   margin-left: 2%;
@@ -164,6 +169,49 @@ h1 {
   border-radius: 20px;
   color: white;
 }
+
+.open-games {
+  margin-top: 2%;
+  margin-bottom: 5%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  overflow-y: scroll;
+  height: 80px;
+  border: 5px solid black;
+  border-radius: 20px;
+  margin-left: 12%;
+  margin-right: 12%;
+}
+
+h3, h4 {
+  margin-top: 3%;
+  text-align: center;
+  font-family: 'Play', sans-serif;
+  }
+
+h6 {
+  font-family: 'Balsamiq Sans', cursive;
+  text-align: center;
+}
+
+li {
+  border-bottom: 2px solid #2f4f4f;
+  border-radius: 10px;
+  margin-top: 1%;
+  padding-left: 2px;
+  padding-right: 2px;
+  padding-top: 2px;
+}
+
+.gray {
+  background: #2f4f4f;
+  color: white;
+}
+
+  .game-list {
+    list-style-type: none;
+  }
 
 p {
   text-align: center;
@@ -425,6 +473,19 @@ outline: none;
     font-size: 30px;
   }
 
+  h3 {
+    font-size: 16px;
+  }
+
+  p {
+    font-size: 12px;
+  }
+
+  .open-games {
+    font-size: 12px;
+  }
+
+
   #zero {
     border-bottom: 5px solid white;
     border-right: 5px solid white;
@@ -507,6 +568,11 @@ outline: none;
   .col-4 {
     height: 58px;
   }
+
+  h3 {
+    font-size: 14px;
+  }
+
   #zero {
     border-bottom: 3px solid white;
     border-right: 3px solid white;

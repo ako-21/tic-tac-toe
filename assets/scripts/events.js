@@ -134,6 +134,7 @@ const onSelection = function (event) {
 }
 
 const onGameStats = function (event) {
+  $('.stats-hide').toggle()
   if (store.user === undefined) {
     $('#messages').text('Must be logged in to view game stats.')
   }
