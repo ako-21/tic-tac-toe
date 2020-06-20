@@ -156,6 +156,7 @@ const gameStatsSuccess = function (data) {
   $('.stats-hide').show()
   $('#messages').empty()
   $('#winnermessages').empty()
+  $('#game').load(location.href + ' #game>*', '')
   // $('.stats-hide').show()
   // if over, count the wins for x and o and tie
   const createArray = function (arr) {
