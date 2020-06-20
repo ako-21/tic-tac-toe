@@ -88,7 +88,10 @@ $(document).on('click', '#newGame', function () {
 
 const showGameSuccess = function (data) {
   console.log(data)
+  store.game = data.game
   $('#gameStats').attr('disabled', true)
+  $('.hide').show()
+  $('.stats-hide').show()
 }
 
 const selectionZeroSuccess = function (data) {
