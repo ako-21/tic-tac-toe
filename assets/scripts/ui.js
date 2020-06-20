@@ -88,7 +88,7 @@ $(document).on('click', '#newGame', function () {
 
 const showGameSuccess = function (data) {
   console.log(data)
-  store.game = data.game
+  store.game = data.game[0]
   $('#gameStats').attr('disabled', true)
   $('.hide').show()
   $('.stats-hide').show()
@@ -153,6 +153,7 @@ const gameStatsSuccess = function (data) {
     $('.hide').hide()
   }
   $('.game-list').empty()
+  $('.stats-hide').show()
   $('#messages').empty()
   $('#winnermessages').empty()
   // $('.stats-hide').show()
@@ -198,6 +199,8 @@ const gameStatsSuccess = function (data) {
 
 const gameStatsFailure = function () {
   if (store.user === undefined) {
+    $('#messages').text('Must be logged in to view game stats.')
+  } else {
     $('#messages').text('Must be logged in to view game stats.')
   }
 }

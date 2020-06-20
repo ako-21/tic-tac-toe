@@ -134,7 +134,7 @@ const onSelection = function (event) {
 }
 
 const onGameStats = function (event) {
-  $('.stats-hide').toggle()
+  // $('.stats-hide').toggle()
   if (store.user === undefined) {
     $('#messages').text('Must be logged in to view game stats.')
   }
@@ -149,13 +149,10 @@ const liClick = function (event) {
   event.preventDefault()
   api.showGame()
     .then(ui.showGameSuccess)
-    .then(() => console.log(store.game[0].cells))
-    .then(() => store.game[0].cells.forEach((value, index) => { if (value === 'X') { $(`[data-cell-index=${index}]`).parent().text('X'); $(`[data-cell-index=${index}]`).remove() } else if (value === 'O') { $(`[data-cell-index=${index}]`).parent().text('O'); $(`[data-cell-index=${index}]`).remove() } }))
-    .then(() => store.game[0].cells.forEach(value => { if (value === 'X') { xCount = 1 + xCount } else if (value === 'O') { oCount = 1 + oCount } }))
+    .then(() => console.log(store.game.cells))
+    .then(() => store.game.cells.forEach((value, index) => { if (value === 'X') { $(`[data-cell-index=${index}]`).parent().text('X'); $(`[data-cell-index=${index}]`).remove() } else if (value === 'O') { $(`[data-cell-index=${index}]`).parent().text('O'); $(`[data-cell-index=${index}]`).remove() } }))
+    .then(() => store.game.cells.forEach(value => { if (value === 'X') { xCount = 1 + xCount } else if (value === 'O') { oCount = 1 + oCount } }))
     .then(() => { if (xCount <= oCount) { $('#game').removeClass(); $('#game').addClass('X') } else { $('#game').removeClass(); $('#game').addClass('O') } })
-    // .then(store.game._id = store.game[0]._id)
-    // .then(api.finishGame())
-    // .then(onSelection)
 }
 
 module.exports = {
