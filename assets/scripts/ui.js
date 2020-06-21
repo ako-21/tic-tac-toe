@@ -24,7 +24,7 @@ const signInSuccess = function (data) {
   $('#tosignup').hide()
   // store the user object to access the token
   store.user = data.user
-  console.log(data)
+//  console.log(data)
 }
 const signInFailure = function () {
   $('#messages').text('Wrong user name or password. Try again.')
@@ -87,7 +87,7 @@ $(document).on('click', '#newGame', function () {
 })
 
 const showGameSuccess = function (data) {
-  console.log(data)
+//  console.log(data)
   store.game = data.game[0]
   $('#gameStats').attr('disabled', true)
   $('.hide').show()
@@ -163,7 +163,7 @@ const gameStatsSuccess = function (data) {
     return arr.over === true
   }
   const newArray = data.games.filter(createArray)
-  console.log(newArray)
+  //  console.log(newArray)
   let xCount = 0
   let oCount = 0
   let tieCount = 0
@@ -181,12 +181,12 @@ const gameStatsSuccess = function (data) {
   $('#xCount').html(xCount)
   $('#oCount').html(oCount)
   $('#tieCount').html(tieCount)
-  console.log(xCount + 'xCount')
+  // console.log(xCount + 'xCount')
   // if active, show in ul
   const displayOpen = function (arr) {
     let idHTML = ''
     if (arr.over === false) {
-      console.log(arr)
+      // console.log(arr)
       const makeLI = (`
       <li id="${arr._id}">Game: \u00A0 ${arr._id}</li>
       `)
