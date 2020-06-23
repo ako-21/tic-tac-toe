@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Tic Tac Toe</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body>
+    <section id="topLeft" class="newStyle">
+      <button type="submit" id="signOut">Sign Out</button><button id="tosignin">Sign In</button><button id="tosignup">Sign Up</button>
+      <div class="hide-pw-button">
+        <button id="pw">Change Password</button>
+      </div>
+    </section>
+    <div class="header-area">
+    <section id="banner" class="oldStyle">
+      <h1>Welcome To Tic Tac Toe!</h1>
+    </section>
+  </div>
+  <div class="hide-sign-up">
+  <div class="sign-in-form-area newStyle">
+    <h2 id="signInHeader">Sign In</h2>
+    <form id="signIn">
+      <input required placeholder="Email Address" name="credentials[email]" type="email"><br>
+      <input required placeholder="Password" name="credentials[password]" type="password"><br>
+      <button type="Submit">Sign In</button>
+    </form>
+  </div>
+</div>
+    <div class="other-form-area">
+    <section id="bellowBanner" class="newStyle">
+      <div class="sign-up-hide">
+      <h2 id="signUpHeader">Sign Up</h2>
+      <form id="signUp">
+        <input required placeholder="Email Address" name="credentials[email]" type="email">
+        <input required placeholder="Password" name="credentials[password]" type="password">
+        <input required placeholder="Confirm Password" name="credentials[password_confirmation]" type="password">
+        <button type="Submit">Sign Up</button>
+      </form>
+    </div>
+    <div class="hide-pw">
+      <h2 id="changePWDHeader">Change Password</h2>
+      <form id="changePWD">
+        <input required placeholder="Current Password" name="passwords[old]" type="password">
+        <input required placeholder="New Password" name="passwords[new]" type="password">
+        <button type="Submit">Change</button>
+      </form>
+      <div class="pw-fail OldStyle" id="pwfail">
+      </div>
+    </div>
+    </section>
+  </div>
+  <div class="messages">
+    <section id="messages" class="OldStyle">
+    </section>
+  </div>
+<section id="dynamic" class="newStyle">
+  <button type="Submit" id="newGame">New Game</button>
+  <br>
+  <button type="Submit" id="gameStats">Game Stats</button>
+</section>
+<br>
+<div class="messages">
+<section id="winnermessages" class="newStyle">
+</section>
+</div>
+<div class="hide">
+<div class="game-box">
+<section id="game" class="X">
+    <div class="container">
+      <div class="row no-gutters">
+        <div id="zero" class="col-4 col-sm-4 col-lx-4 col-md-4 col-lg-4">
+          <button type="button" id="indexZero" class="zero" data-cell-index="0"></button>
+        </div>
+        <div id="one" class="col-4 col-sm-4 col-lx-4 col-md-4 col-lg-4">
+          <button id="indexOne" class="one" data-cell-index="1"></button>
+        </div>
+        <div id="two" class="col-4 col-sm-4 col-lx-4 col-md-4 col-lg-4">
+          <button id="indexTwo" class="two" data-cell-index="2"></button>
+        </div>
+        <div id="three" class="col-4 col-sm-4 col-lx-4 col-md-4 col-lg-4">
+            <button id="indexThree" class="three" data-cell-index="3"></button>
+        </div>
+        <div id="four" class="col-4 col-sm-4 col-lx-4 col-md-4 col-lg-4">
+            <button id="indexFour" class="four" data-cell-index="4"></button>
+        </div>
+        <div id="five" class="col-4 col-sm-4 col-lx-4 col-md-4 col-lg-4">
+            <button id="indexFive" class="five" data-cell-index="5"></button>
+        </div>
+        <div id="six" class="col-4 col-sm-4 col-lx-4 col-md-4 col-lg-4">
+            <button id="indexSix" class="six" data-cell-index="6"></button>
+        </div>
+        <div id="seven" class="col-4 col-sm-4 col-lx-4 col-md-4 col-lg-4">
+            <button id="indexSeven" class="seven" data-cell-index="7"></button>
+        </div>
+        <div id="eight" class="col-4 col-sm-4 col-lx-4 col-md-4 col-lg-4">
+            <button id="indexEight" class="eight" data-cell-index="8"></button>
+        </div>
+    </div>
+      </div>
+      </section>
+    </div>
+  </div>
+  <div class="stats-hide">
+    <div class="finished-games">
+      <section class="x-won oldStyle">
+        <h3>X's Wins</h3>
+        <p id="xCount">empty</p>
+      </section>
+      <section class="o-won oldStyle">
+        <h3>O's Wins</h3>
+        <p id="oCount">empty</p>
+      </section>
+      <section class="tie-won oldStyle">
+        <h3>Ties</h3>
+        <p id="tieCount"></p>
+      </section>
+    </div>
+    <h4>Active Games</h4>
+    <h6>Click on one to Finish</h6>
+    <div class="open-games">
+      <ul class="game-list newStyle"></ul>
+    </div>
+  </div>
+  </body>
+</html>
