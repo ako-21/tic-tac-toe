@@ -47,6 +47,7 @@ const signOutSuccess = function () {
   $('.hide-pw-button').hide()
   $('#winnermessages').empty()
   $('.stats-hide').hide()
+  $('#gameStats').removeAttr('disabled')
 
   // location.reload()
 }
